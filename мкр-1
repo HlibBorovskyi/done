@@ -1,0 +1,21 @@
+def main():
+    n = int(input("Enter the dimension of the matrix (NxN): "))
+
+    matrix = []
+    for _ in range(n):
+        row = list(map(int, input(f"Enter row {_ + 1} values: ").split()))
+        matrix.append(row)
+
+    print("Entered matrix:")
+    for row in matrix:
+        print(row)
+
+    col_averages = [sum(matrix[i][j] for i in range(n)) / n for j in range(n)]
+
+    print("\nAverages of each column:")
+    for j, average in enumerate(col_averages):
+        print(f"Column {j + 1}: {average}")
+
+if __name__ == "__main__":
+    main()
+
